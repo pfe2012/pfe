@@ -1,0 +1,1 @@
+C:/Vhosts/pfe/test/calcul_ART.exe = image=obj100__295 pathin=C:/Vhosts/pfe/images/Coil100Databases/Obj100/ pathfb=C:\Vhosts\pfe\test\ART(exe)/fctbase.txt pathout=C:\Vhosts\pfe\test\ART(exe)/ CFB=0

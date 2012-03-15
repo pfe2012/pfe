@@ -1,0 +1,1 @@
+Recherche.exe = c:/vhosts/pfe/result/Descripteur_Coil-100.txt c:/Vhosts/pfe/result/listeClasses_Coil100Databases.txt c:/Vhosts/pfe/result/Params_Index_Coil100Databases.txt c:/Vhosts/pfe/result/ParamsIndexing_Coil100Databases.txt c:/Vhosts/pfe/result/ c:/Vhosts/pfe/result/liste_Coil100Databases.txt 
