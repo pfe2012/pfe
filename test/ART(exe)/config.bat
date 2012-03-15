@@ -1,0 +1,1 @@
+ART = filein=obj100__295 pathimage=c:/ pathfctbase=c:/fctdebase.txt pathout=C:\Vhosts\pfe\test\ART(exe)/ Nb_coul=5

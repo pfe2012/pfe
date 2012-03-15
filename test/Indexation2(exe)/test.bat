@@ -1,0 +1,2 @@
+C:\Vhosts\pfe\test\Indexation2(exe)\Indexation = 
+C:\Vhosts\pfe\result\Descripteur_base-imagenorm.txt C:\Vhosts\pfe\result\listeClasses_base-image.txt C:\Vhosts\pfe\result\Params_Index_base-image.txt C:\Vhosts\pfe\result\ParamsIndexing_base-image.txt C:\Vhosts\pfe\test\Indexation2(exe)\

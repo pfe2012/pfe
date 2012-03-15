@@ -1,0 +1,7 @@
+premier parametre : couleursdominantes correspond au mon de l'executable de la couleur dominante
+le deuxieme  param :image=.... correspond au chemin de l'image
+le troisieme parametere : filein=.. contient le non de l'image
+le quatrieme: le chemin ou on compte stoké les couleurs dominantes
+le cinquime: e nomnre de couleurs dominantes
+le sixieme :le mon du fichier ou on a stoché les couleurs dominante
+le dernier parametre : correpond au chemin+nom du fichier resultat (l'histogram couleur)
