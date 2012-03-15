@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+#contentcolumn{
+margin-left: 210px; /*Set left margin to LeftColumnWidth*/
+}
+
+#leftcolumn{
+float: left;
+width: 190px; /*Width of left column*/
+/*margin-left: -100%;*/
+
+
+}

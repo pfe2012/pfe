@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+	.col4,
+	.col5,
+	.col6 {
+		float:left;
+		position:relative;
+		padding:0 0 1em 0;
+		overflow:hidden;
+	}
+	.colleft1 {
+		float:left;
+		width:100%;
+		position:relative;
+	}
+
+	/* 2 Column (double page) settings */
+	.doublepage1 {
+		background:#eee;		/* right column background colour */
+	}
+	.doublepage1 .colleft1 {
+		right:70%;			/* right column width */
+		background:#fff;		/* left column background colour */
+	}
+	.doublepage1 .col4 {
+		width:26%;			/* left column content width (column width minus left and right padding) */
+		left:72%;			/* right column width plus left column left padding */
+	}
+	.doublepage1 .col5 {
+		width:66%;			/* right column content width (column width minus left and right padding) */
+		left:76%;			/* (right column width) plus (left column left and right padding) plus (right column left padding) */
+	}
