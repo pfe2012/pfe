@@ -139,8 +139,6 @@ function traitementImage($imagepath,$paramNormPath,$baseName){
 	echo "value ele = ".$elements1[$colTotal-1];
 	echo "value avg = ".$avg[$colTotal-4];
 	for ($col=0;$col<$colTotal-3;$col++){
-		//echo "value col = ".$col."    ";
-		//echo "value ele = ".$elements1[$col];
 		$elements1[$col]=$elements1[$col]-$avg[$col];
 	}
 	for ($col=0;$col<$colTotal-3;$col++){

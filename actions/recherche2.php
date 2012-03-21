@@ -27,8 +27,8 @@
 			include("../functions/rechercheFunctions.php");
 			
 			# Constants
-			define(MAX_WIDTH, 75);
-			define(MAX_HEIGHT, 75);	
+			define('MAX_WIDTH', 75);
+			define('MAX_HEIGHT', 75);	
 		?>    
 	</div>
 	<div id="contentcolumn">
