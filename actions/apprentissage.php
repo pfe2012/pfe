@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>apprentissage</title>
+	<link rel="stylesheet" type="text/css" href="/css/menu.css">
 	<link rel="stylesheet" type="text/css" href="/css/twocolumn.css" />
 	<link rel="stylesheet" type="text/css" href="/css/global.css" />
 </head>
@@ -13,7 +14,7 @@
 		<?php 
 			include("../menu.php"); 
 			include("../functions/apprentissageFunctions.php");
-		?>    
+		?>
 	</div>
 	
 	<div id="contentcolumn">

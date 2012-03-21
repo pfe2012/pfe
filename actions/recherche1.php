@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>search 1</title>
+	<link rel="stylesheet" type="text/css" href="/css/menu.css">
 </head>
 
 <body>

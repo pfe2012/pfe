@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<title>Search</title>
 	<link rel="stylesheet" type="text/css" href="/css/twocolumn.css" />
+	<link rel="stylesheet" type="text/css" href="/css/menu.css">
 	<link rel="stylesheet" type="text/css" href="/css/global.css" />
 	<link rel="stylesheet" type="text/css" href="/css/recherche.css" />
 	<link rel="stylesheet" type="text/css" href="/css/style.css" />
