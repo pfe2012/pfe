@@ -17,8 +17,6 @@
 </head>
  
 <body>
-		I can't undestand !!!
-		OT de la merde !!!
 		<?php 
 		 
 		 require_once "login/header.php"; 
