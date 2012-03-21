@@ -134,17 +134,23 @@ function traitementImage($imagepath,$paramNormPath,$baseName){
 	while($theData=="") {
 		$theData=trim(fgets($file1,5000));
 	}	$ecart = explode(" ",$theData);
-	for ($col=0;$col<$colTotal;$col++){
+	
+	echo "value colTotal = ".$colTotal;
+	echo "value ele = ".$elements1[$colTotal-1];
+	echo "value avg = ".$avg[$colTotal-4];
+	for ($col=0;$col<$colTotal-3;$col++){
+		//echo "value col = ".$col."    ";
+		//echo "value ele = ".$elements1[$col];
 		$elements1[$col]=$elements1[$col]-$avg[$col];
 	}
-	for ($col=0;$col<$colTotal;$col++){
+	for ($col=0;$col<$colTotal-3;$col++){
 		if ($ecart[$col]!=0){
 			$elements1[$col]=$elements1[$col]/$ecart[$col];
 		}
 	}
 	//copy($imagepath."request.txt",$imagepath."requestdeb.txt");
 	$file1=fopen($imagepath."request.txt","w") or exit ("Unable to access to file b");
-	for($col=0;$col<$colTotal;$col++){
+	for($col=0;$col<$colTotal-3;$col++){
 		fwrite($file1,$elements1[$col]." ");
 	}
 	fclose($file1);
@@ -170,11 +176,11 @@ function traitementImage($imagepath,$paramNormPath,$baseName){
 function clearAll($directoryPath){
 	$handler = opendir($directoryPath) or die ("Cant open directory; directorypath: ".$directoryPath);
 	while (false !== ($file = readdir($handler))) { 
-
         // if $file isn't this directory or its parent, 
         // add it to the results array
 		if ($file != '.' && $file != '..'){
-			if ( !is_dir("$directorypath/$file")){
+			if ( !is_dir("$directoryPath.$file")){
+				//echo $directoryPath.$file;
 				unlink($directoryPath.$file);
 			}
 		}
