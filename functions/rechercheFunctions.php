@@ -135,9 +135,9 @@ function traitementImage($imagepath,$paramNormPath,$baseName){
 		$theData=trim(fgets($file1,5000));
 	}	$ecart = explode(" ",$theData);
 	
-	echo "value colTotal = ".$colTotal;
-	echo "value ele = ".$elements1[$colTotal-1];
-	echo "value avg = ".$avg[$colTotal-4];
+//	echo "value colTotal = ".$colTotal;
+//	echo "value ele = ".$elements1[$colTotal-1];
+//	echo "value avg = ".$avg[$colTotal-4];
 	for ($col=0;$col<$colTotal-3;$col++){
 		$elements1[$col]=$elements1[$col]-$avg[$col];
 	}
@@ -155,9 +155,9 @@ function traitementImage($imagepath,$paramNormPath,$baseName){
 	//transpose
 	
 	$command = "start /min C:/vhosts/pfe/test/reqindex/IndexationReq.exe = ";
-	$command.= $resultpath."Params_Index_".$baseName.".txt ";//chemin vers les param�tres de l'indexation
+	$command.= $resultpath."Params_Index_".$baseName.".txt ";//chemin vers les paramètres de l'indexation
 	copy($resultpath."matriceDePassage.txt",$imagepath."matriceDePassage.txt");
-	$command.= $imagepath;//r�pertoire r�sultat
+	$command.= $imagepath;//répertoire résultat
 	$command.= " ".$resultpath.$baseName."_Descripteurs_Transposee.txt";
 	
 	//echo "test ".$command."<br />";
