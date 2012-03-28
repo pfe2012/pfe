@@ -79,7 +79,7 @@ function sendLostPasswordEmail($username, $email, $newpassword)
 function sendActivationEmail($username, $password, $uid, $email, $actcode)
 {
     global $domain;
-    $link = "http://localhost:8080/login/activate.php?uid=$uid&actcode=$actcode";
+    $link = "http://localhost/login/activate.php?uid=$uid&actcode=$actcode";
     $message = "Bonjour, <br />
 				Merci de vous enregistrer sur notre site http://imanbum.$domain/,<br />
 				<br /> 
