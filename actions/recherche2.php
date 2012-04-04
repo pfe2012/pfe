@@ -39,7 +39,7 @@
 	        
 	        <div class="col4">
 	        	<?php
-			        $resultpath="c:/vhosts/pfe/result/";  // ou seront les r�sultats
+			        $resultpath="c:/vhosts/pfe/result/";  // ou seront les résultats
 					$target_path = "C:/vhosts/pfe/uploads/";   // ou seront les fichiers intermediaires
 					$target_path = $target_path . "requete.jpg"; 
 						// echo "on est bien avant traitement image";
@@ -52,10 +52,12 @@
 					
 					if (isset($_FILES['uploadedfile'])){
 						if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)){ 
-						  // copie de l'image requ�te dans target_path
+						  // copie de l'image requête dans target_path
 						  //traitement image: calculer les descripteur + normaliser		
 						  $imagepath="C:/vhosts/pfe/uploads/";
 						  $paramNormPath=$resultpath."normVar.txt";
+						  
+						  //TRAITEMENT
 						  traitementImage($imagepath,$paramNormPath,$name);
 						} 
 						else
@@ -69,7 +71,10 @@
 					{
 							feedback($resultpath,40);
 					}			
-								
+
+					//RECHERCHE
+					$time = timer_start();
+					
 					$command = "start /min C:/vhosts/pfe/test/Recherche(exe)/Recherche.exe = ";
 					$command.= $resultpath.$name."_Descripteurs_Transposee.txt ";//Descripteur transposee
 					$command.= $resultpath."listeClasses_".$name.".txt ";//Liste classe
@@ -79,6 +84,9 @@
 					$command.= $resultpath."liste_".$name.".txt";//listes des images
 					exec($command, $output, $return);	
 			
+					echo 'Recherche tourne dans '.timer_stop($time).'<br />';
+					
+					
 				    echo "<br />";
 					echo "<img src=\"../uploads/requete.jpg\"/>";
 					echo "<br />";
@@ -186,7 +194,7 @@
 							}
 				        } //end foreach
 				        
-				        echo "</tr></table>";         
+				        echo "</tr></table>";  				        
 				        ?>
 					</div>
 				

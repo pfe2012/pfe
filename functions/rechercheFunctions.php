@@ -39,7 +39,7 @@ function inputFileName($fileLocation){
 		$line_of_text = trim(fgets($fileopen));
 		if ($line_of_text!=""){
 			$data=explode('_',$line_of_text);
-			 $folder="../images/Coil100Databases/".$data[0]."/";
+			$folder="../images/Coil100Databases/".$data[0]."/";
 			$name=trim(nameWithoutExtension($line_of_text));
 			$result[$index]=$folder.$name.".jpg";
 			
@@ -70,15 +70,45 @@ function feedback($path,$nbImage){
 }
 
 
-
+/***********************************************************************************************/
+/****************************************    TEST   ********************************************/
 /***********************************************************************************************/
 
+ /**
+ * Fonctions de gestion du timer
+ *
+ * @return microtime
+ */
+function timer_start()
+{
+	$mtime = explode(' ', microtime());
+	return ($mtime['1'] + $mtime['0']);
+}
+  /**
+ * Fonctions de gestion du timer
+ *
+ * @param microtime $start
+ * @return time
+ */
+function timer_stop($start)
+{
+	$mtime   = explode(' ', microtime());
+	$endtime = $mtime['1'] + $mtime['0'];
+	$offset  = strpos($endtime - $start, '.') + 6;
+	return substr($endtime - $start, 0, $offset);
+}
+
+
 /***********************************************************************************************/
+/****************************************    TEST   ********************************************/
+/***********************************************************************************************/
+
 
 function traitementImage($imagepath,$paramNormPath,$baseName){
 
 	$resultpath="c:/vhosts/pfe/result/";
 	
+	$time = timer_start();
 	$command = "start /min C:/vhosts/pfe/test/histogramcouleur(exe)/Hist_Norm.exe = ";
 	$command.= "C:/vhosts/pfe/test/couleursdominanteS/quantif_couleur_seul_sans_fond_noir.exe ";//chemin vers couleurdominantes
 	$command.= " image=requete";//nom de l'image
@@ -89,7 +119,9 @@ function traitementImage($imagepath,$paramNormPath,$baseName){
 	$command.= " ".$imagepath."requete"."_hist.txt";//chemin complet vers le resultat de hist
 	
 	exec($command, $output, $return);
-
+	echo 'Hist_Norm tourne dans '.timer_stop($time).'<br />';
+			
+	$time = timer_start();
 	$command = "start /min c:/vhosts/pfe/test/ART(exe)/calcul_ART_coil.exe = ";// a remettre si je veux tester avec l'ancienne version sur la base base
 	$command.= " image=requete";//nom de l'image
 	$command.= " pathin=".$imagepath;//chemin vers l'image
@@ -98,7 +130,9 @@ function traitementImage($imagepath,$paramNormPath,$baseName){
 	$command.= " CFB=0"; // 0 pour ne pas recalculer les fonctions de base
 	
 	exec($command, $output, $return);
-	
+	echo 'calcul_ART_coil tourne dans '.timer_stop($time).'<br />';
+
+	$time = timer_start();
 	$namefile="requete";
 	//create descripter global
 	$globTempDesc=fopen($imagepath."requestdeb.txt","w"); //Remplac� par la ligne suivante pour sauter la normalisation	
@@ -112,8 +146,7 @@ function traitementImage($imagepath,$paramNormPath,$baseName){
 	fclose($fileopen);
 	$theData=strstr($theData," ");
 	fwrite($globTempDesc,(trim($theData)));
-	fclose($globTempDesc);
-	
+	fclose($globTempDesc);	
 	
 	
 	//normalize pour avoir des donn�es centr�es et moyenn�es
@@ -163,7 +196,8 @@ function traitementImage($imagepath,$paramNormPath,$baseName){
 	//echo "test ".$command."<br />";
 	 exec($command, $output, $return);
 	copy($imagepath."requestTranspose.txt", $resultpath."request.txt");
-
+	echo 'Normalizer+Indexation tourne dans '.timer_stop($time).'<br />';
+	
 }
 
 
